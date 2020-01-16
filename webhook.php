@@ -44,8 +44,8 @@ ignore_user_abort();
 ob_start();
 header("Content-Type: application/json");
 header("Connection: close");
-header("Content-Length: " . ob_get_length());
 print_r(json_encode($data, JSON_PRETTY_PRINT));
+header("Content-Length: " . ob_get_length());
 ob_end_flush();
 flush();
 ?>

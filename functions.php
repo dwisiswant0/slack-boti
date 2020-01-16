@@ -4,7 +4,7 @@ include "vars.php";
 function shellExec($cmd, $run_in_background = null) {
 	global $MAIN_DIR;
 	if ($run_in_background) $cmd .= " > /dev/null 2>/dev/null & echo \$!";
-	return shell_exec("cd ${MAIN_DIR} && ${cmd}");
+	return trim(shell_exec("cd ${MAIN_DIR} && ${cmd}"));
 }
 
 function checkDir($path) {

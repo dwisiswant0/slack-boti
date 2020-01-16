@@ -39,13 +39,13 @@ switch ($command) {
 
 writeLog($_POST);
 
-header('Content-Type: application/json');
 ob_end_clean();
 ignore_user_abort();
 ob_start();
+header("Content-Type: application/json");
 header("Connection: close");
-print_r(json_encode($data, JSON_PRETTY_PRINT));
 header("Content-Length: " . ob_get_length());
+print_r(json_encode($data, JSON_PRETTY_PRINT));
 ob_end_flush();
 flush();
 ?>
